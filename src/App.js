@@ -19,21 +19,13 @@ function App() {
 	};
 
 	return (
+		// Pass a value prop to your `Provider`(products state, and addItem function)
 		<ProductContext.Provider value={[products, addItem]}>
 		<div className="App">
 			<Navigation cart={cart} />
 
 			{/* Routes */}
-			<Route
-				exact
-				path="/"
-				render={() => (
-					<Products
-						products={products}
-						addItem={addItem}
-					/>
-				)}
-			/>
+			<Route exact path="/" component={Product}/>
 
 			<Route
 				path="/cart"
